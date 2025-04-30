@@ -1,205 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>OnlyScans</title>
-    <style>
-    /* Base styles (desktop first) */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>OnlyScans</title>
+  <style>
     body {
-        background-color: black;
-        color: white;
-        font-family: 'Helvetica', sans-serif;
-        font-weight: bold;
-        letter-spacing: -0.05em;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+      background-color: black;
+      color: white;
+      font-family: 'Helvetica', sans-serif;
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
 
     h1 {
-        font-size: 72px;
-        margin: 0;
+      font-size: 72px;
+      margin: 0;
     }
 
     p {
-        font-size: 32px;
-        margin-top: -20px;
+      font-size: 32px;
+      margin-top: -20px;
     }
 
     .p2 {
-        font-size: 18px;
-        margin-top: 10px;
-        font-weight: normal;
-        letter-spacing: 0em;
-        text-align: justify;
-        font-family: 'Helvetica', sans-serif;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: normal;
+      letter-spacing: 0em;
+      text-align: justify;
+      font-family: 'Helvetica', sans-serif;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
     }
 
     .p3 {
-        font-size: 32px;
+      font-size: 32px;
+      text-align: left;
+      max-width: 800px;
+      margin: 40px auto 10px;
     }
 
     .p4 {
-        font-size: 20px;
-        margin-top: 200px;
+      font-size: 20px;
+      margin-top: 100px;
     }
 
     img {
-        margin-top: 10px;
-        width: 250px;
+      margin-top: 10px;
+      width: 250px;
     }
 
     .icon-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
-    /* Top-left logo */
     .top-left {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 100px;
-        height: auto;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: auto;
     }
 
-    /* Top-right hamburger */
     .hamburger {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
     }
 
-    /* Dropdown menu */
     .menu {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        background-color: #1c1c1c;
-        border: 1px solid #444;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1000;
-        text-align: left;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      background-color: #1c1c1c;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: left;
     }
 
     .menu a {
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        color: white;
-        border-bottom: 1px solid #333;
-        font-weight: normal;
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+      font-weight: normal;
     }
 
     .menu a:hover {
-        background-color: #333;
+      background-color: #333;
     }
 
-    /* Mobile styles */
     @media (max-width: 768px) {
-        h1 {
-            font-size: 48px;
-        }
-        p {
-            font-size: 22px;
-            margin-top: -12px;
-        }
-        .p2 {
-            font-size: 16px;
-            padding: 0 10px;
-        }
-        .p3 {
-            font-size: 24px;
-        }
-        .p4 {
-            font-size: 16px;
-        }
-        img {
-            width: 150px;
-        }
-        .icon-container {
-            gap: 10px;
-        }
+      h1 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 22px;
+        margin-top: -12px;
+      }
+      .p2 {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      .p3 {
+        font-size: 24px;
+      }
+      .p4 {
+        font-size: 16px;
+      }
+      img {
+        width: 150px;
+      }
+      .icon-container {
+        gap: 10px;
+      }
     }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Top-left logo -->
-    <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
+  <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo" />
+  <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()" />
 
-    <!-- Top-right hamburger menu -->
-    <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:support@onlyscans.com">Contact</a>
+  </div>
 
-    <!-- Dropdown menu -->
-    <div class="menu" id="menu">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="mailto:support@onlyscans.com">Contact</a>
-    </div>
+  <div class="p3">Privacy Policy</div>
+  <div class="p2">
+    <strong>Effective Date: April 19, 2025</strong><br><br>
+    Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our app.
+  </div>
 
-    <div style="width: 100%; max-width: 800px; padding: 0 20px; text-align: left;">
-        <p class="p3" style="margin-top: 300px;">Privacy Policy</p>
-    </div>
+  <div class="p3">1. Information We Collect</div>
+  <div class="p2">
+    <strong>a. Information You Provide</strong><br>
+    Account Information: By signing into the app using Sign In With Apple, we are provided with your unique Apple User Identifier.<br>
+    User Generated Content: Any scans, links, images or other content that you share within the app.<br>
+    Contact Information: We may collect and store any contact information you provide.<br><br>
 
-    <div style="width: 100%; max-width: 800px; padding: 0 20px; text-align: left;">
-        <p class="p2">
-            Effective Date: April 19, 2025
-            <br>
-            <br>
-            Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and protect your information when you use our app.
-            <br>
-            <br>
-        </p>
-    </div>
+    <strong>b. Information We Collect Automatically</strong><br>
+    Usage Data: Information about how you use the app (e.g., usage, usage frequency, usage behavior, viewed or uploaded scans).<br>
+    Device Information: Device type, OS version, unique device identifiers, and crash reports.
+  </div>
 
-    <div style="width: 100%; max-width: 800px; padding: 0 20px; text-align: left;">
-        <p class="p3">
-            1. Information We Collect
-            <br>
-        </p>
-    </div>
+  <div class="p3">2. How We Use Your Information</div>
+  <div class="p2">
+    We use your information to:<br>
+    - Provide and maintain the app<br>
+    - Enable content sharing and viewing<br>
+    - Personalize your experience<br>
+    - Communicate with you including for support and updates<br>
+    - Monitor and analyze usage and trends<br>
+    - Protect against abuse or violation of our Terms
+  </div>
 
-    <div style="width: 100%; max-width: 800px; padding: 0 20px; text-align: left;">
-        <p class="p2">
-        a. Information You Provide
-            <br>
-        Account Information: By signing into the app using Sign In With Apple, we are provided with your unique Apple User Identifier.
-            <br>
-        User Generated Content: Any scans, links, images or other content that you share within the app.
-            <br>
-        Contact Information: We may collect and store any contact information you provide.
-            <br>
-            <br>
-        b. Information We Collect Automatically
-            <br>
-        Usage Data: Information about how you use the app (e.g., usage, usage frequency, usage behavior, viewed or uploaded scans)
-            <br>
-        Device Information: Device type, OS version, unique device identifiers, and crash reports.
+  <div class="p3">3. How We Share Your Information</div>
+  <div class="p2">
+    Your information may be shared with:<br>
+    - <strong>Other users:</strong> Content you share may be shared with other users<br>
+    - <strong>Service providers:</strong> Trusted third parties who help us operate the app, such as hosting or analytics providers<br>
+    - <strong>Legal authorities:</strong> If required by law, regulation, or legal process, or to protect the rights and safety of our users and the public<br>
+    - <strong>Business transfer parties:</strong> If we are involved in a merger, acquisition, or asset sale, your information may be transferred as part of that process
+  </div>
 
-        </p>
-    </div>
+  <div class="p3">4. Content Visibility and Control</div>
+  <div class="p2">
+    <strong>Content creation:</strong> Content that you create but don't share remains local to your device and is unavailable to OnlyScans. Content that you create and share will be visible to OnlyScans and by those who have access to the associated QR code or Link.<br><br>
+    <strong>Editing or deleting content:</strong> You are able to delete scans that you have created, whether they have or haven't been shared.
+  </div>
 
-    <p class="p4">support@onlyscansapp.com</p>
+  <div class="p3">5. Data Security</div>
+  <div class="p2">
+    We implement reasonable security measures to protect your data. However, no method of transmission or storage is 100% secure. Please use the app responsibly.
+  </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+  <div class="p3">6. Children's Privacy</div>
+  <div class="p2">
+    Our app is not intended for children under the age of 17 (or equivalent minimum age in your jurisdiction). We do not knowingly collect personal data from children.
+  </div>
+
+  <div class="p3">7. Changes to this Policy</div>
+  <div class="p2">
+    We may update this Privacy Policy from time to time. We will notify you of significant changes via the app or other means. Continued use of the app indicates your acceptance of the updated policy.
+  </div>
+
+  <div class="p3">8. Contact Us</div>
+  <div class="p2">
+    If you have any questions about this Privacy Policy, please contact us at <a href="mailto:onlyscansapp@gmail.com" style="color: #4fa3f7;">onlyscansapp@gmail.com</a>.
+  </div>
+
+  <p class="p4">support@onlyscansapp.com</p>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
