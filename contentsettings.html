@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toggle Switch Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Content Settings - OnlyScans</title>
   <style>
+    /* Existing styles omitted for brevity... */
+
+    /* Toggle Switch Styles */
     .switch {
       position: relative;
       display: inline-block;
       width: 60px;
       height: 34px;
+      margin-top: 40px;
     }
 
-    .switch input {display:none;}
+    .switch input {
+      display: none;
+    }
 
     .slider {
       position: absolute;
@@ -40,33 +47,69 @@
     input:checked + .slider:before {
       transform: translateX(26px);
     }
+
+    .toggle-label {
+      font-size: 18px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+  <!-- Top-left logo -->
+  <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
 
-<h2>NSFW Content Setting</h2>
+  <!-- Top-right hamburger menu -->
+  <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
 
-<label class="switch">
-  <input type="checkbox" id="toggleSwitch">
-  <span class="slider"></span>
-</label>
+  <!-- Dropdown menu -->
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:support@onlyscans.com">Contact</a>
+  </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("toggleSwitch");
+  <!-- Center image -->
+  <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true"
+    alt="OnlyScans Logo"
+    style="width: 350px; margin-top: 250px;">
 
-    // Read initialState from URL query params
-    const urlParams = new URLSearchParams(window.location.search);
-    const initialState = urlParams.get("initialState");
-    toggle.checked = (initialState === "true");
+  <!-- 🔽 Toggle switch injected here -->
+  <div>
+    <label class="switch">
+      <input type="checkbox" id="toggleSwitch">
+      <span class="slider"></span>
+    </label>
+    <div class="toggle-label">Show NSFW Content</div>
+  </div>
+  <!-- 🔼 Toggle switch injected here -->
 
-    toggle.addEventListener("change", function () {
-      const switchedState = toggle.checked;
-      const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${switchedState}`;
-      window.location.href = newUrl; // Simulates wixLocation.to()
+  <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/downloadButton.svg?raw=true"
+    alt="Download Button"
+    style="width: 150px; margin-top: 300px;">
+
+  <p class="p4">support@onlyscans.com</p>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 🔽 Toggle switch script
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("toggleSwitch");
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialState = urlParams.get("initialState");
+      toggle.checked = (initialState === "true");
+
+      toggle.addEventListener("change", function () {
+        const switchedState = toggle.checked;
+        const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${switchedState}`;
+        window.location.href = newUrl;
+      });
     });
-  });
-</script>
-
+    // 🔼 Toggle switch script
+  </script>
 </body>
 </html>
