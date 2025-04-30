@@ -1,167 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>OnlyScans</title>
-    <style>
-    /* Base styles (desktop first) */
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>OnlyScans</title>
+  <style>
     body {
-        background-color: black;
-        color: white;
-        font-family: 'Helvetica', sans-serif;
-        font-weight: bold;
-        letter-spacing: -0.05em;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
+      background-color: black;
+      color: white;
+      font-family: 'Helvetica', sans-serif;
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
     }
 
     h1 {
-        font-size: 72px;
-        margin: 0;
+      font-size: 72px;
+      margin: 0;
     }
 
     p {
-        font-size: 32px;
-        margin-top: -20px;
+      font-size: 32px;
+      margin-top: -20px;
     }
 
     .p2 {
-        font-size: 18px;
-        margin-top: 10px;
-        font-weight: normal;
-        letter-spacing: 0em;
-        text-align: justify;
-        font-family: 'Helvetica', sans-serif;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 20px;
+      font-size: 18px;
+      margin-top: 10px;
+      font-weight: normal;
+      letter-spacing: 0em;
+      text-align: left;
+      font-family: 'Helvetica', sans-serif;
+      line-height: 1.6;
     }
 
     .p3 {
-        font-size: 32px;
-        margin-top: 50px;
+      font-size: 32px;
+      margin-top: 10px;
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      text-align: left;
+      font-family: 'Helvetica', sans-serif;
+      line-height: 1.6;
+    }
+
+    .p3.first {
+      font-size: 40px;
+      margin-top: 200px;
+      font-weight: bold;
+      letter-spacing: -0.05em;
+      text-align: left;
+      font-family: 'Helvetica', sans-serif;
+      line-height: 1.6;
     }
 
     .p4 {
-        font-size: 20px;
-        margin-top: 200px;
+      font-size: 20px;
+      margin-top: 100px;
     }
 
     img {
-        margin-top: 10px;
-        width: 250px;
+      margin-top: 10px;
+      width: 250px;
     }
 
     .icon-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
 
-    /* Top-left logo */
     .top-left {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 100px;
-        height: auto;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 100px;
+      height: auto;
     }
 
-    /* Top-right hamburger */
     .hamburger {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
     }
 
-    /* Dropdown menu */
     .menu {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        background-color: #1c1c1c;
-        border: 1px solid #444;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1000;
-        text-align: left;
+      display: none;
+      position: absolute;
+      top: 50px;
+      right: 10px;
+      background-color: #1c1c1c;
+      border: 1px solid #444;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      text-align: left;
     }
 
     .menu a {
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        color: white;
-        border-bottom: 1px solid #333;
-        font-weight: normal;
+      display: block;
+      padding: 10px 15px;
+      text-decoration: none;
+      color: white;
+      border-bottom: 1px solid #333;
+      font-weight: normal;
     }
 
     .menu a:hover {
-        background-color: #333;
+      background-color: #333;
     }
 
-    /* Mobile styles */
     @media (max-width: 768px) {
-        h1 {
-            font-size: 48px;
-        }
-        p {
-            font-size: 22px;
-            margin-top: -12px;
-        }
-        .p2 {
-            font-size: 16px;
-            padding: 0 10px;
-        }
-        .p3 {
-            font-size: 24px;
-        }
-        .p4 {
-            font-size: 16px;
-        }
-        img {
-            width: 150px;
-        }
-        .icon-container {
-            gap: 10px;
-        }
+      h1 {
+        font-size: 48px;
+      }
+      p {
+        font-size: 22px;
+        margin-top: -12px;
+      }
+      .p2 {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+      .p3 {
+        font-size: 20px;
+        padding: 0 10px;
+      }
+      .p3.first {
+        font-size: 24px;
+        padding: 0 10px;
+      }
+      .p4 {
+        font-size: 16px;
+      }
+      img {
+        width: 150px;
+      }
+      .icon-container {
+        gap: 10px;
+      }
     }
-    </style>
+  </style>
 </head>
 <body>
-    <!-- Top-left logo -->
-    <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
+  <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo" />
+  <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()" />
 
-    <!-- Top-right hamburger menu -->
-    <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
+  <div class="menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+    <a href="mailto:support@onlyscans.com">Contact</a>
+  </div>
 
-    <!-- Dropdown menu -->
-    <div class="menu" id="menu">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="mailto:support@onlyscans.com">Contact</a>
+  <div class="container">
+    <div class="p3 first">Terms of Service</div>
+    <div class="p2">
+      <strong>Effective Date: April 19, 2025</strong><br><br>
+      Welcome to OnlyScans! These Terms of Service (“Terms”) govern your use of the OnlyScans mobile application and related services (collectively, the “Service”) provided by OnlyScans (“we”, “us”, or “our”).
+​<br>
+        <br>
+“Upload” and “share,” including all variations and tenses of these terms, are used interchangeably and refer to any action by which you submit, post, transmit, or otherwise make content available through the Service.
+ <br>
+        <br>
+By accessing or using OnlyScans, you agree to be bound by these Terms. If you do not agree, please do not use the Service.
     </div>
 
-    <p class="p3">Terms of Service</p>
+    <div class="p3">1. Eligibility</div>
+    <div class="p2">
+      You must be at least 17 years old (or the minimum age in your jurisdiction) to use the Service. By using OnlyScans, you represent that you meet this requirement and you are of legal age to enter into a binding contract.
+    </div>
 
-    <p class="p4">support@onlyscans.com</p>
+    <div class="p3">2. User Content</div>
+    <div class="p2">
+      a. Ownership<br>
+        - You retain ownership of the content you create and share on the Service (“User Content”).<br>
+        b. License to Us<br>
+        - By sharing content, you grant us a transferable, sublicensable, worldwide, royalty-free license to host, store, publish, display, distribute, and otherwise use your content through the Service and on platforms operated or owned by the Service. This license allows us to make your content available to those with whom you share it, and to operate, promote and improve the Service. It also allows us to generate revenue by providing access to your content through the Service. We do not sell your content to users, third parties or otherwise.<br>
+        - You retain ownership of your content and may delete, share, commercialize, or profit from it at your discretion. However, content created or uploaded through the Service may be accessed and viewed only through the Service. If the Service ceases to operate for any reason, including the dissolution of the business, all hosted content will become inaccessible, and your license grant to us will automatically terminate.<br>
+        c. Your Responsibilities<br>
+        You are solely responsible for your User Content. You agree not to share content that is or contains:
+        - Illegal imagery<br>
+        - Defamatory, discriminatory, or mean-spirited content, including references or commentary about religion, race, sexual orientation, gender, national/ethnic origin, or other targeted groups, particularly if the content is likely to humiliate, intimidate, or harm a targeted individual or group.<br>
+        - Realistic portrayals of people or animals being killed, maimed, tortured, or abused, or content that encourages violence.<br>
+        - Depictions that encourage illegal or reckless use of weapons and dangerous objects, or facilitate the purchase of firearms or ammunition.<br>
+        - Infringing on intellectual property rights<br>
+        - Spam or deceptive in nature<br>
+        - Sharing of content that could be considered sensitive in nature must be tagged as such when shared. Failure to do so is a violation of these Terms and may result in the removal of the violating consent and suspension from using the Service.<br>
+        - Should you decide to cancel your subscription that allows you to share content, and would subsequently like to have your content removed from the Service, it is your responsibility to delete your content from the Service, as it will not be automatically deleted.<br>
+        We reserve the right to remove content that violates these Terms and/or report illegal content to the appropriate authorities.<br>
+    </div>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    <div class="p3">3. Content Moderation</div>
+    <div class="p2">
+      We may monitor or review content to enforce our policies. However, we do not guarantee that all content will be reviewed, and we are not responsible for content shared by users.<br><br>
+      To assist us with content moderation, we have implemented a form of userbase moderation, where shared content can be flagged and reported by other users of the Service.<br>
+    </div>
+
+    <div class="p3">4. Prohibited Activities</div>
+    <div class="p2">
+      You agree not to:<br>
+        - Violate any laws or regulations<br>
+        - Use the app for any unlawful or harmful purpose<br>
+        - Interfere with the operation or security of the Service<br>
+        - Attempt to access or collect data from other users without permission<br>
+        - Reverse engineer or modify the app<br>
+    </div>
+
+    <div class="p3">5. Intellectual Property</div>
+    <div class="p2">
+      All rights in OnlyScans, including text, graphics, logos, and software, are owned by or licensed to us. You may not copy, modify, or distribute any part of the app unless expressly permitted.
+    </div>
+
+    <div class="p3">6. Termination</div>
+    <div class="p2">
+      We may suspend or terminate your access to the Service at any time, with or without notice, for conduct that violates these Terms or is otherwise harmful to us or other users.
+      You may also stop using the Service at any time.<br>
+    </div>
+
+    <div class="p3">7. Disclaimer of Warranties</div>
+    <div class="p2">
+      The Service is provided “as is” and “as available.” We make no warranties or guarantees about the reliability, accuracy, or availability of the Service. Use it at your own risk.
+    </div>
+
+    <div class="p3">8. Limitation of Liability</div>
+    <div class="p2">
+      To the maximum extent permitted by law, we are not liable for any indirect, incidental, or consequential damages resulting from:<br>
+        - Your use of or inability to use the Service<br>
+        - Unauthorized access to your data<br>
+        - User content posted by others<br>
+    </div>
+
+      <div class="p3">9. Indemnification</div>
+    <div class="p2">
+      You agree to defend, indemnify, and hold harmless OnlyScans, its owners, and affiliates from any claims, liabilities, and expenses arising from:<br>
+        - Your use of the Service<br>
+        - Your User Content<br>
+        - Your violation of these Terms<br>
+    </div>
+
+      <div class="p3">10. Changes to these Terms</div>
+    <div class="p2">
+      We may update these Terms from time to time. If we make material changes, we will notify you via the app or other means. Continued use of the Service after the changes take effect means you agree to the new Terms.
+    </div>
+
+      <div class="p3">11. Governing Law</div>
+    <div class="p2">
+      These Terms are governed by the laws of the United States of America, without regard to conflict of law principles. Any disputes will be resolved in the courts of the United States of America.
+    </div>
+
+      <div class="p3">12. Contact us</div>
+    <div class="p2">
+      If you have questions or concerns about these Terms, contact us at onlyscansapp@gmail.com
+    </div>
+
+          <div class="p3">Appendix A: End User License Agreement (EULA)</div>
+    <div class="p2">
+      Apps made available through the App Store are licensed, not sold, to you. Your license to each App is subject to your prior acceptance of either this Licensed Application End User License Agreement (“Standard EULA”), or a custom end user license agreement between you and the Application Provider (“Custom EULA”), if one is provided. Your license to any Apple App under this Standard EULA or Custom EULA is granted by Apple, and your license to any Third Party App under this Standard EULA or Custom EULA is granted by the Application Provider of that Third Party App. Any App that is subject to this Standard EULA is referred to herein as the “Licensed Application.” The Application Provider or Apple as applicable (“Licensor”) reserves all rights in and to the Licensed Application not expressly granted to you under this Standard EULA.<br><br>
+​
+a. Scope of License: Licensor grants to you a nontransferable license to use the Licensed Application on any Apple-branded products that you own or control and as permitted by the Usage Rules. The terms of this Standard EULA will govern any content, materials, or services accessible from or purchased within the Licensed Application as well as upgrades provided by Licensor that replace or supplement the original Licensed Application, unless such upgrade is accompanied by a Custom EULA. Except as provided in the Usage Rules, you may not distribute or make the Licensed Application available over a network where it could be used by multiple devices at the same time. You may not transfer, redistribute or sublicense the Licensed Application and, if you sell your Apple Device to a third party, you must remove the Licensed Application from the Apple Device before doing so. You may not copy (except as permitted by this license and the Usage Rules), reverse-engineer, disassemble, attempt to derive the source code of, modify, or create derivative works of the Licensed Application, any updates, or any part thereof (except as and only to the extent that any foregoing restriction is prohibited by applicable law or to the extent as may be permitted by the licensing terms governing use of any open-sourced components included with the Licensed Application).<br><br>
+​
+b. Consent to Use of Data: You agree that Licensor may collect and use technical data and related information—including but not limited to technical information about your device, system and application software, and peripherals—that is gathered periodically to facilitate the provision of software updates, product support, and other services to you (if any) related to the Licensed Application. Licensor may use this information, as long as it is in a form that does not personally identify you, to improve its products or to provide services or technologies to you.<br><br>
+​
+c. Termination. This Standard EULA is effective until terminated by you or Licensor. Your rights under this Standard EULA will terminate automatically if you fail to comply with any of its terms. <br><br>
+​
+d. External Services. The Licensed Application may enable access to Licensor’s and/or third-party services and websites (collectively and individually, "External Services"). You agree to use the External Services at your sole risk. Licensor is not responsible for examining or evaluating the content or accuracy of any third-party External Services, and shall not be liable for any such third-party External Services. Data displayed by any Licensed Application or External Service, including but not limited to financial, medical and location information, is for general informational purposes only and is not guaranteed by Licensor or its agents. You will not use the External Services in any manner that is inconsistent with the terms of this Standard EULA or that infringes the intellectual property rights of Licensor or any third party. You agree not to use the External Services to harass, abuse, stalk, threaten or defame any person or entity, and that Licensor is not responsible for any such use. External Services may not be available in all languages or in your Home Country, and may not be appropriate or available for use in any particular location. To the extent you choose to use such External Services, you are solely responsible for compliance with any applicable laws. Licensor reserves the right to change, suspend, remove, disable or impose access restrictions or limits on any External Services at any time without notice or liability to you.<br><br> 
+​
+e. NO WARRANTY: YOU EXPRESSLY ACKNOWLEDGE AND AGREE THAT USE OF THE LICENSED APPLICATION IS AT YOUR SOLE RISK. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED APPLICATION AND ANY SERVICES PERFORMED OR PROVIDED BY THE LICENSED APPLICATION ARE PROVIDED "AS IS" AND “AS AVAILABLE,” WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, AND LICENSOR HEREBY DISCLAIMS ALL WARRANTIES AND CONDITIONS WITH RESPECT TO THE LICENSED APPLICATION AND ANY SERVICES, EITHER EXPRESS, IMPLIED, OR STATUTORY, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES AND/OR CONDITIONS OF MERCHANTABILITY, OF SATISFACTORY QUALITY, OF FITNESS FOR A PARTICULAR PURPOSE, OF ACCURACY, OF QUIET ENJOYMENT, AND OF NONINFRINGEMENT OF THIRD-PARTY RIGHTS. NO ORAL OR WRITTEN INFORMATION OR ADVICE GIVEN BY LICENSOR OR ITS AUTHORIZED REPRESENTATIVE SHALL CREATE A WARRANTY. SHOULD THE LICENSED APPLICATION OR SERVICES PROVE DEFECTIVE, YOU ASSUME THE ENTIRE COST OF ALL NECESSARY SERVICING, REPAIR, OR CORRECTION. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES OR LIMITATIONS ON APPLICABLE STATUTORY RIGHTS OF A CONSUMER, SO THE ABOVE EXCLUSION AND LIMITATIONS MAY NOT APPLY TO YOU.<br><br>
+​
+f. Limitation of Liability. TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT SHALL LICENSOR BE LIABLE FOR PERSONAL INJURY OR ANY INCIDENTAL, SPECIAL, INDIRECT, OR CONSEQUENTIAL DAMAGES WHATSOEVER, INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, LOSS OF DATA, BUSINESS INTERRUPTION, OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES, ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE LICENSED APPLICATION, HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, OR OTHERWISE) AND EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE LIMITATION OF LIABILITY FOR PERSONAL INJURY, OR OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. In no event shall Licensor’s total liability to you for all damages (other than as may be required by applicable law in cases involving personal injury) exceed the amount of fifty dollars ($50.00). The foregoing limitations will apply even if the above stated remedy fails of its essential purpose.<br><br>
+​
+g. You may not use or otherwise export or re-export the Licensed Application except as authorized by United States law and the laws of the jurisdiction in which the Licensed Application was obtained. In particular, but without limitation, the Licensed Application may not be exported or re-exported (a) into any U.S.-embargoed countries or (b) to anyone on the U.S. Treasury Department's Specially Designated Nationals List or the U.S. Department of Commerce Denied Persons List or Entity List. By using the Licensed Application, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use these products for any purposes prohibited by United States law, including, without limitation, the development, design, manufacture, or production of nuclear, missile, or chemical or biological weapons.<br><br>
+​
+h. The Licensed Application and related documentation are "Commercial Items", as that term is defined at 48 C.F.R. §2.101, consisting of "Commercial Computer Software" and "Commercial Computer Software Documentation", as such terms are used in 48 C.F.R. §12.212 or 48 C.F.R. §227.7202, as applicable. Consistent with 48 C.F.R. §12.212 or 48 C.F.R. §227.7202-1 through 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users (a) only as Commercial Items and (b) with only those rights as are granted to all other end users pursuant to the terms and conditions herein. Unpublished-rights reserved under the copyright laws of the United States.<br><br>
+​
+i. Except to the extent expressly provided in the following paragraph, this Agreement and the relationship between you and Apple shall be governed by the laws of the State of California, excluding its conflicts of law provisions. You and Apple agree to submit to the personal and exclusive jurisdiction of the courts located within the county of Santa Clara, California, to resolve any dispute or claim arising from this Agreement. If (a) you are not a U.S. citizen; (b) you do not reside in the U.S.; (c) you are not accessing the Service from the U.S.; and (d) you are a citizen of one of the countries identified below, you hereby agree that any dispute or claim arising from this Agreement shall be governed by the applicable law set forth below, without regard to any conflict of law provisions, and you hereby irrevocably submit to the non-exclusive jurisdiction of the courts located in the state, province or country identified below whose law governs:<br><br>
+​
+If you are a citizen of any European Union country or Switzerland, Norway or Iceland, the governing law and forum shall be the laws and courts of your usual place of residence.<br><br>
+​
+Specifically excluded from application to this Agreement is that law known as the United Nations Convention on the International Sale of Goods.<br><br>
+    </div>
+  </div>
+
+  <p class="p4">onlyscansapp@gmail.com</p>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.style.display = menu.style.display === "block" ? "none" : "block";
+    }
+  </script>
 </body>
 </html>
