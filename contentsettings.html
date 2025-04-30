@@ -217,10 +217,25 @@
     <p class="p4">support@onlyscans.com</p>
 
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-        }
-    </script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    // 🔽 Toggle switch script
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("toggleSwitch");
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialState = urlParams.get("initialState");
+      toggle.checked = (initialState === "true");
+
+      toggle.addEventListener("change", function () {
+        const switchedState = toggle.checked;
+        const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${switchedState}`;
+        window.location.href = newUrl;
+      });
+    });
+    // 🔼 Toggle switch script
+  </script>
 </body>
 </html>
