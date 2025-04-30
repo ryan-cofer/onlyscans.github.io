@@ -217,25 +217,25 @@
     <p class="p4">support@onlyscans.com</p>
 
     <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    }
+  function toggleMenu() {
+    const menu = document.getElementById('menu');
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+  }
 
-    // 🔽 Toggle switch script
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggle = document.getElementById("toggleSwitch");
-      const urlParams = new URLSearchParams(window.location.search);
-      const initialState = urlParams.get("initialState");
-      toggle.checked = (initialState === "true");
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("toggleSwitch");
+    const urlParams = new URLSearchParams(window.location.search);
+    const switchedState = urlParams.get("switchedState");
 
-      toggle.addEventListener("change", function () {
-        const switchedState = toggle.checked;
-        const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${switchedState}`;
-        window.location.href = newUrl;
-      });
+    // Set initial position of the toggle
+    toggle.checked = (switchedState === "true");
+
+    toggle.addEventListener("change", function () {
+      const newState = toggle.checked;
+      const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${newState}`;
+      window.location.href = newUrl;
     });
-    // 🔼 Toggle switch script
-  </script>
+  });
+</script>
 </body>
 </html>
