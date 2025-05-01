@@ -198,22 +198,20 @@
             document.addEventListener("DOMContentLoaded", function() {
     const toggle = document.getElementById("toggleSwitch");
     
-    // Set initial state (will be overridden by Swift injection)
+    // Temporary initial state (will be overwritten by Swift injection)
     toggle.checked = false; 
+    console.log("Default UI state loaded:", toggle.checked);
+    
+    // Listen for Swift's state injection
+    setTimeout(() => {
+        console.log("Final toggle state after native injection:", toggle.checked);
+    }, 300);
     
     toggle.addEventListener("change", function(event) {
-        event.preventDefault(); // Stop any default form behavior
-        
+        event.preventDefault();
         const state = toggle.checked;
-        console.log("Toggle changed to:", state);
         
-        // Send to native app WITHOUT changing URL
-        if (window.webkit?.messageHandlers?.toggleHandler) {
-            window.webkit.messageHandlers.toggleHandler.postMessage(state);
-        }
-        
-        // Keep the toggle in its new state
-        return false; 
+        window.webkit?.messageHandlers?.toggleHandler?.postMessage(state);
     });
 });
         </script>
