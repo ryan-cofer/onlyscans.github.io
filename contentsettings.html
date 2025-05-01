@@ -196,25 +196,26 @@
             }
             
             document.addEventListener("DOMContentLoaded", function() {
-            const toggle = document.getElementById("toggleSwitch");
-            
-            // Optional: Confirm initial state was set
-            window.addEventListener('nativeBridgeReady', function() {
-            console.log("Toggle initial state:", toggle.checked);
-            });
-            
-            toggle.addEventListener("change", function() {
-            const state = toggle.checked;
-            console.log("Toggle changed to:", state);
-            
-            // Send message to native app
-            if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.toggleHandler) {
+    const toggle = document.getElementById("toggleSwitch");
+    
+    // Set initial state (will be overridden by Swift injection)
+    toggle.checked = false; 
+    
+    toggle.addEventListener("change", function(event) {
+        event.preventDefault(); // Stop any default form behavior
+        
+        const state = toggle.checked;
+        console.log("Toggle changed to:", state);
+        
+        // Send to native app WITHOUT changing URL
+        if (window.webkit?.messageHandlers?.toggleHandler) {
             window.webkit.messageHandlers.toggleHandler.postMessage(state);
-            } else {
-            console.warn("Native bridge not available");
-            }
-            });
-            });
+        }
+        
+        // Keep the toggle in its new state
+        return false; 
+    });
+});
         </script>
     </body>
 </html>
