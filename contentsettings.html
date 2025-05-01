@@ -1,241 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>OnlyScans</title>
-    <style>
-    /* Base styles (desktop first) */
-    body {
-        background-color: black;
-        color: white;
-        font-family: 'Helvetica', sans-serif;
-        font-weight: bold;
-        letter-spacing: -0.05em;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-
-    h1 {
-        font-size: 72px;
-        margin: 0;
-    }
-
-    p {
-        font-size: 32px;
-        margin-top: -20px;
-    }
-
-    .p2 {
-        font-size: 18px;
-        margin-top: 10px;
-        font-weight: normal;
-        letter-spacing: 0em;
-        text-align: justify;
-        font-family: 'Helvetica', sans-serif;
-        max-width: 800px;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 0 20px;
-    }
-
-    .p3 {
-        font-size: 32px;
-        margin-top: 50px;
-    }
-
-    .p4 {
-        font-size: 20px;
-        margin-top: 200px;
-    }
-
-    img {
-        margin-top: 10px;
-        width: 250px;
-    }
-
-    .icon-container {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    /* Top-left logo */
-    .top-left {
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 100px;
-        height: auto;
-    }
-
-    /* Top-right hamburger */
-    .hamburger {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-    }
-
-    /* Dropdown menu */
-    .menu {
-        display: none;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        background-color: #1c1c1c;
-        border: 1px solid #444;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        z-index: 1000;
-        text-align: left;
-    }
-
-    .menu a {
-        display: block;
-        padding: 10px 15px;
-        text-decoration: none;
-        color: white;
-        border-bottom: 1px solid #333;
-        font-weight: normal;
-    }
-
-    .menu a:hover {
-        background-color: #333;
-    }
-
-    /* Toggle Switch Styles */
-    .switch {
-      position: relative;
-      display: inline-block;
-      width: 60px;
-      height: 34px;
-      margin-top: 40px;
-    }
-
-    .switch input {
-      display: none;
-    }
-
-    .slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: #ccc;
-      transition: 0.4s;
-      border-radius: 34px;
-    }
-
-    .slider:before {
-      position: absolute;
-      content: "";
-      height: 26px; width: 26px;
-      left: 4px; bottom: 4px;
-      background-color: white;
-      transition: 0.4s;
-      border-radius: 50%;
-    }
-
-    input:checked + .slider {
-      background-color: #2196F3;
-    }
-
-    input:checked + .slider:before {
-      transform: translateX(26px);
-    }
-
-    .toggle-label {
-      font-size: 18px;
-      margin-top: 10px;
-
-    /* Mobile styles */
-    @media (max-width: 768px) {
-        h1 {
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="noindex, nofollow">
+        <title>OnlyScans</title>
+        <style>
+            /* Base styles (desktop first) */
+            body {
+            background-color: black;
+            color: white;
+            font-family: 'Helvetica', sans-serif;
+            font-weight: bold;
+            letter-spacing: -0.05em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            }
+            h1 {
+            font-size: 72px;
+            margin: 0;
+            }
+            p {
+            font-size: 32px;
+            margin-top: -20px;
+            }
+            .p2 {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: normal;
+            letter-spacing: 0em;
+            text-align: justify;
+            font-family: 'Helvetica', sans-serif;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
+            }
+            .p3 {
+            font-size: 32px;
+            margin-top: 50px;
+            }
+            .p4 {
+            font-size: 20px;
+            margin-top: 200px;
+            }
+            img {
+            margin-top: 10px;
+            width: 250px;
+            }
+            .icon-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            }
+            /* Top-left logo */
+            .top-left {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 100px;
+            height: auto;
+            }
+            /* Top-right hamburger */
+            .hamburger {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            }
+            /* Dropdown menu */
+            .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 10px;
+            background-color: #1c1c1c;
+            border: 1px solid #444;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            z-index: 1000;
+            text-align: left;
+            }
+            .menu a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid #333;
+            font-weight: normal;
+            }
+            .menu a:hover {
+            background-color: #333;
+            }
+            /* Toggle Switch Styles */
+            .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-top: 40px;
+            }
+            .switch input {
+            display: none;
+            }
+            .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: 0.4s;
+            border-radius: 34px;
+            }
+            .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px; width: 26px;
+            left: 4px; bottom: 4px;
+            background-color: white;
+            transition: 0.4s;
+            border-radius: 50%;
+            }
+            input:checked + .slider {
+            background-color: #2196F3;
+            }
+            input:checked + .slider:before {
+            transform: translateX(26px);
+            }
+            .toggle-label {
+            font-size: 18px;
+            margin-top: 10px;
+            /* Mobile styles */
+            @media (max-width: 768px) {
+            h1 {
             font-size: 48px;
-        }
-        p {
+            }
+            p {
             font-size: 22px;
             margin-top: -12px;
-        }
-        .p2 {
+            }
+            .p2 {
             font-size: 16px;
             padding: 0 10px;
-        }
-        .p3 {
+            }
+            .p3 {
             font-size: 24px;
-        }
-        .p4 {
+            }
+            .p4 {
             font-size: 16px;
-        }
-        img {
+            }
+            img {
             width: 150px;
-        }
-        .icon-container {
+            }
+            .icon-container {
             gap: 10px;
-        }
-    }
-    </style>
-</head>
-<body>
-    <!-- Top-left logo -->
-    <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
-
-    <!-- Top-right hamburger menu -->
-    <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
-
-    <!-- Dropdown menu -->
-    <div class="menu" id="menu">
-        <a href="index.html">Home</a>
-        <a href="privacy.html">Privacy Policy</a>
-        <a href="terms.html">Terms of Service</a>
-        <a href="mailto:support@onlyscans.com">Contact</a>
-    </div>
-
-    <!-- Center image -->
-    <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true"
-     alt="OnlyScans Logo"
-     style="width: 350px; margin-top: 250px;">
-
-    <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/downloadButton.svg?raw=true"
-     alt="Download Button"
-     style="width: 150px; margin-top: 300px;">
-
-    <div>
-    <label class="switch">
-      <input type="checkbox" id="toggleSwitch">
-      <span class="slider"></span>
-    </label>
-    <div class="toggle-label">Show NSFW Content</div>
-  </div>
-
-    <p class="p4">support@onlyscans.com</p>
-
-    <script>
-  function toggleMenu() {
-    const menu = document.getElementById('menu');
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-  }
-
-  document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.getElementById("toggleSwitch");
-    const urlParams = new URLSearchParams(window.location.search);
-    const switchedState = urlParams.get("switchedState");
-
-    // Set initial position of the toggle
-    toggle.checked = (switchedState === "true");
-
-    toggle.addEventListener("change", function () {
-      const newState = toggle.checked;
-      const newUrl = `${window.location.origin}${window.location.pathname}?switchedState=${newState}`;
-      window.location.href = newUrl;
-    });
-  });
-</script>
-</body>
+            }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Top-left logo -->
+        <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
+        <!-- Top-right hamburger menu -->
+        <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
+        <!-- Dropdown menu -->
+        <div class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Service</a>
+            <a href="mailto:support@onlyscans.com">Contact</a>
+        </div>
+        <!-- Center image -->
+        <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true"
+            alt="OnlyScans Logo"
+            style="width: 350px; margin-top: 250px;">
+        <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/downloadButton.svg?raw=true"
+            alt="Download Button"
+            style="width: 150px; margin-top: 300px;">
+        <div>
+            <label class="switch">
+            <input type="checkbox" id="toggleSwitch">
+            <span class="slider"></span>
+            </label>
+            <div class="toggle-label">Show NSFW Content</div>
+        </div>
+        <p class="p4">support@onlyscans.com</p>
+        <script>
+            function toggleMenu() {
+              const menu = document.getElementById('menu');
+              menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+            
+            document.addEventListener("DOMContentLoaded", function () {
+              const toggle = document.getElementById("toggleSwitch");
+              const urlParams = new URLSearchParams(window.location.search);
+              const initialState = urlParams.get("initialState");
+            
+              // Set initial position of the toggle
+              toggle.checked = (initialState === "true");
+            
+              toggle.addEventListener("change", function () {
+                const newState = toggle.checked;
+                const newUrl = `${window.location.origin}${window.location.pathname}?initialState=${newState}`;
+                window.location.href = newUrl;
+              });
+            });
+        </script>
+    </body>
 </html>
