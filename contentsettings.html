@@ -8,157 +8,193 @@
         <style>
             /* Base styles (desktop first) */
             body {
-            background-color: black;
-            color: white;
-            font-family: 'Helvetica', sans-serif;
-            font-weight: bold;
-            letter-spacing: -0.05em;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+                background-color: black;
+                color: white;
+                font-family: 'Helvetica', sans-serif;
+                font-weight: bold;
+                letter-spacing: -0.05em;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
             }
             h1 {
-            font-size: 72px;
-            margin: 0;
+                font-size: 72px;
+                margin: 0;
             }
             p {
-            font-size: 32px;
-            margin-top: -20px;
+                font-size: 32px;
+                margin-top: -20px;
             }
             .p2 {
-            font-size: 18px;
-            margin-top: 10px;
-            font-weight: normal;
-            letter-spacing: 0em;
-            text-align: justify;
-            font-family: 'Helvetica', sans-serif;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0 20px;
+                font-size: 18px;
+                margin-top: 10px;
+                font-weight: normal;
+                letter-spacing: 0em;
+                text-align: justify;
+                font-family: 'Helvetica', sans-serif;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+                padding: 0 20px;
             }
             .p3 {
-            font-size: 32px;
-            margin-top: 50px;
+                font-size: 32px;
+                margin-top: 50px;
             }
             .p4 {
-            font-size: 20px;
-            margin-top: 200px;
+                font-size: 20px;
+                margin-top: 200px;
             }
             img {
-            margin-top: 10px;
-            width: 250px;
+                margin-top: 10px;
+                width: 250px;
             }
             .icon-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+                display: flex;
+                justify-content: center;
+                gap: 20px;
             }
             /* Top-left logo */
             .top-left {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 100px;
-            height: auto;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                width: 100px;
+                height: auto;
             }
             /* Top-right hamburger */
             .hamburger {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
             }
             /* Dropdown menu */
             .menu {
-            display: none;
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background-color: #1c1c1c;
-            border: 1px solid #444;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            z-index: 1000;
-            text-align: left;
+                display: none;
+                position: absolute;
+                top: 50px;
+                right: 10px;
+                background-color: #1c1c1c;
+                border: 1px solid #444;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+                z-index: 1000;
+                text-align: left;
             }
             .menu a {
-            display: block;
-            padding: 10px 15px;
-            text-decoration: none;
-            color: white;
-            border-bottom: 1px solid #333;
-            font-weight: normal;
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                color: white;
+                border-bottom: 1px solid #333;
+                font-weight: normal;
             }
             .menu a:hover {
-            background-color: #333;
+                background-color: #333;
+            }
+            /* Toggle Switch Container */
+            .toggle-container {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                margin-top: 40px;
             }
             /* Toggle Switch Styles */
             .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin-top: 40px;
+                position: relative;
+                display: inline-block;
+                width: 60px;
+                height: 34px;
             }
             .switch input {
-            display: none;
+                opacity: 0;
+                width: 0;
+                height: 0;
             }
             .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: #ccc;
-            transition: 0.4s;
-            border-radius: 34px;
+                position: absolute;
+                cursor: pointer;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #ccc;
+                transition: .4s;
+                border-radius: 34px;
             }
             .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px; width: 26px;
-            left: 4px; bottom: 4px;
-            background-color: white;
-            transition: 0.4s;
-            border-radius: 50%;
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                transition: .4s;
+                border-radius: 50%;
             }
             input:checked + .slider {
-            background-color: #2196F3;
+                background-color: #2196F3;
             }
             input:checked + .slider:before {
-            transform: translateX(26px);
+                transform: translateX(26px);
             }
+            /* ON/OFF Labels */
             .toggle-label {
-            font-size: 18px;
-            margin-top: 10px;
+                font-weight: bold;
+                font-size: 18px;
+                transition: color 0.3s;
+                min-width: 40px;
+            }
+            .toggle-label.off {
+                color: #ff3b30; /* Red for OFF */
+                text-align: right;
+            }
+            .toggle-label.on {
+                color: #34c759; /* Green for ON */
+                text-align: left;
+            }
+            /* Hide inactive label */
+            input:checked ~ .toggle-label.off,
+            input:not(:checked) ~ .toggle-label.on {
+                display: none;
+            }
             /* Mobile styles */
             @media (max-width: 768px) {
-            h1 {
-            font-size: 48px;
-            }
-            p {
-            font-size: 22px;
-            margin-top: -12px;
-            }
-            .p2 {
-            font-size: 16px;
-            padding: 0 10px;
-            }
-            .p3 {
-            font-size: 24px;
-            }
-            .p4 {
-            font-size: 16px;
-            }
-            img {
-            width: 150px;
-            }
-            .icon-container {
-            gap: 10px;
-            }
+                h1 {
+                    font-size: 48px;
+                }
+                p {
+                    font-size: 22px;
+                    margin-top: -12px;
+                }
+                .p2 {
+                    font-size: 16px;
+                    padding: 0 10px;
+                }
+                .p3 {
+                    font-size: 24px;
+                }
+                .p4 {
+                    font-size: 16px;
+                }
+                img {
+                    width: 150px;
+                }
+                .icon-container {
+                    gap: 10px;
+                }
+                .toggle-container {
+                    gap: 8px;
+                }
+                .toggle-label {
+                    font-size: 16px;
+                }
             }
         </style>
     </head>
@@ -174,41 +210,45 @@
             <a href="terms.html">Terms of Service</a>
             <a href="mailto:support@onlyscans.com">Contact</a>
         </div>
-        // Content Settings Text
-        
-        <div>
-            <label class="switch">
-            <input type="checkbox" id="toggleSwitch">
-            <span class="slider"></span>
-            </label>
-            <div class="toggle-label">Show NSFW Content</div>
+        <div class="p3 first">Content Settings</div>
+        <div class="p2">
+            Show Sensitive Content<br><br>
+            View scans that may contain content considered unsuitable for those under the age of 18<br><br>
+            By turning on sensitive content below, you confirm you are over 18.<br><br>
         </div>
-        <p class="p4">support@onlyscans.com</p>
+        <div class="toggle-container">
+            <span class="toggle-label off">OFF</span>
+            <label class="switch">
+                <input type="checkbox" id="toggleSwitch">
+                <span class="slider"></span>
+            </label>
+            <span class="toggle-label on">ON</span>
+        </div>
         <script>
             function toggleMenu() {
-              const menu = document.getElementById('menu');
-              menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+                const menu = document.getElementById('menu');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
             }
             
             document.addEventListener("DOMContentLoaded", function() {
-    const toggle = document.getElementById("toggleSwitch");
-    
-    // Temporary initial state (will be overwritten by Swift injection)
-    toggle.checked = false; 
-    console.log("Default UI state loaded:", toggle.checked);
-    
-    // Listen for Swift's state injection
-    setTimeout(() => {
-        console.log("Final toggle state after native injection:", toggle.checked);
-    }, 300);
-    
-    toggle.addEventListener("change", function(event) {
-        event.preventDefault();
-        const state = toggle.checked;
-        
-        window.webkit?.messageHandlers?.toggleHandler?.postMessage(state);
-    });
-});
+                const toggle = document.getElementById("toggleSwitch");
+                
+                // Temporary initial state (will be overwritten by Swift injection)
+                toggle.checked = false; 
+                console.log("Default UI state loaded:", toggle.checked);
+                
+                // Listen for Swift's state injection
+                setTimeout(() => {
+                    console.log("Final toggle state after native injection:", toggle.checked);
+                }, 300);
+                
+                toggle.addEventListener("change", function(event) {
+                    event.preventDefault();
+                    const state = toggle.checked;
+                    
+                    window.webkit?.messageHandlers?.toggleHandler?.postMessage(state);
+                });
+            });
         </script>
     </body>
 </html>
