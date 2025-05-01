@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Creators | OnlyScans</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -14,14 +17,17 @@
       background: #f9f9f9;
     }
     header, section, footer {
+      width: 100vw;
+      min-height: 90vh;
       padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
     header {
       background: #000;
       color: #fff;
-      text-align: center;
     }
     h1 {
       font-size: 2rem;
@@ -29,7 +35,6 @@
     }
     h2 {
       font-size: 1.5rem;
-      margin-top: 2rem;
     }
     img {
       max-width: 100%;
@@ -39,54 +44,51 @@
       margin-bottom: 1rem;
     }
     .qr-section {
+      width: 100vw;
+      padding: 2rem;
       background: #eee;
-      padding: 1rem;
       text-align: center;
     }
     .monetization-models {
       background: #fff;
       border: 1px solid #ccc;
-      padding: 1rem;
-      margin-top: 1rem;
+      padding: 2rem;
+      flex-direction: column;
     }
     .section1-bg {
-    background-image: url('your-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
+      background-image: url('your-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
     }
     .section2-bg {
-    background-image: url('section2bg.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
+      background-image: url('section2bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
     }
     .section3-bg {
-    background-image: url('your-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    padding: 4rem 2rem;
-    text-align: center;
+      background-image: url('your-background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
     }
     ul {
-      padding-left: 1.2rem;
+      text-align: left;
+      padding-left: 1.5rem;
     }
     .faq {
-      margin-top: 2rem;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 4rem;
     }
     .contact {
       background: #000;
       color: #fff;
-      padding: 2rem;
-      text-align: center;
+      flex-direction: column;
     }
     a {
       color: #0077cc;
@@ -97,7 +99,7 @@
 <body>
 
 <header>
-  
+  <h1>Creators | OnlyScans</h1>
 </header>
 
 <section class="section1-bg">
@@ -108,7 +110,7 @@
   <h2>Put yourself in their space</h2>
 </section>
 
-<section class="section3-bg>
+<section class="section3-bg">
   <h2>Generate full-scale AR scans of yourself in seconds</h2>
 </section>
 
@@ -118,17 +120,21 @@
 </div>
 
 <section>
-  <h2>Create scans for free and see for yourself</h2>
-  <div class="step"><strong>First.</strong> Download the app.</div>
-  <div class="step"><strong>Second.</strong> Create your scan using simple on-screen instructions.</div>
-  <p><em>Requires iPhone/iPad with LiDAR (Pro models). Any model can view scans.</em></p>
-  <div class="step"><strong>Third.</strong> Prepare your scan for sharing using the share button.</div>
-  <div class="step"><strong>Fourth.</strong> You now have a product ready to <strong>monetize</strong>.</div>
+  <div>
+    <h2>Create scans for free and see for yourself</h2>
+    <div class="step"><strong>First.</strong> Download the app.</div>
+    <div class="step"><strong>Second.</strong> Create your scan using simple on-screen instructions.</div>
+    <p><em>Requires iPhone/iPad with LiDAR (Pro models). Any model can view scans.</em></p>
+    <div class="step"><strong>Third.</strong> Prepare your scan for sharing using the share button.</div>
+    <div class="step"><strong>Fourth.</strong> You now have a product ready to <strong>monetize</strong>.</div>
+  </div>
 </section>
 
 <section>
-  <h2>How much would your fans pay to see you in person?</h2>
-  <p>It’s up to you. You know your fans best—price your scans accordingly.</p>
+  <div>
+    <h2>How much would your fans pay to see you in person?</h2>
+    <p>It’s up to you. You know your fans best—price your scans accordingly.</p>
+  </div>
 </section>
 
 <section class="monetization-models">
@@ -142,24 +148,22 @@
 </section>
 
 <section>
-  <h2>Promotion Ideas</h2>
-  <ul>
-    <li><strong>OnlyFans:</strong> Post teaser links on free pages to drive paid subscriptions.</li>
-    <li><strong>Your Website:</strong> Link teaser images directly to scans.</li>
-    <li><strong>Instagram:</strong> Use link stickers in stories to promote your scans.</li>
-  </ul>
+  <div>
+    <h2>Promotion Ideas</h2>
+    <ul>
+      <li><strong>OnlyFans:</strong> Post teaser links on free pages to drive paid subscriptions.</li>
+      <li><strong>Your Website:</strong> Link teaser images directly to scans.</li>
+      <li><strong>Instagram:</strong> Use link stickers in stories to promote your scans.</li>
+    </ul>
+  </div>
 </section>
 
 <section class="faq">
   <h2>FAQ</h2>
   <p><strong>Where are my scans stored?</strong><br> On U.S. cloud storage, with access granted via QR code or link.</p>
-  
   <p><strong>Who can access my scans?</strong><br> Only those with your QR code or link.</p>
-  
   <p><strong>Do I own my scans?</strong><br> Yes. You retain ownership. OnlyScans can distribute your content for services.</p>
-  
   <p><strong>Can I delete my scans?</strong><br> Yes. Deleting them removes them from your device and our storage.</p>
-  
   <p><strong>Can scans be saved/distributed?</strong><br> They're protected, but sharing of QR codes or links can't be fully prevented.</p>
 </section>
 
