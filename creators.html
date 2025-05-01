@@ -121,11 +121,32 @@
          flex-direction: column;
          }
          .section3-bg {
-         background-image: url('your-background.jpg');
-         background-size: cover;
-         background-position: center;
-         background-repeat: no-repeat;
-         color: white;
+         background-color: white;
+         color: black;
+         width: 100vw;
+         height: 90vh;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         }
+         .section3-content {
+         display: flex;
+         align-items: center;
+         gap: 3rem;
+         padding: 0 2rem;
+         width: 100%;
+         }
+         .body-scan-img {
+         height: 80%;
+         max-height: 600px;
+         object-fit: contain;
+         }
+         .stacked-text {
+         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+         font-weight: bold;
+         font-size: 90px;
+         letter-spacing: -0.04em;
+         line-height: 1.1;
          }
          ul {
          text-align: left;
@@ -203,7 +224,13 @@
       <section class="section3-bg">
          <div class="section3-content">
             <img src="bodyScan.png" alt="Body Scan" class="body-scan-img">
-            <h2 class="huge-text">Generate full-scale AR scans of yourself in seconds</h2>
+            <div class="stacked-text">
+               <div>Generate</div>
+               <div>full-scale</div>
+               <div>AR scans</div>
+               <div>of yourself</div>
+               <div>in seconds</div>
+            </div>
          </div>
       </section>
       <div class="qr-section">
