@@ -259,22 +259,28 @@
   }
   
   .section3-content {
-    flex-direction: column;
+    flex-direction: row; /* Keep horizontal layout */
     align-items: center;
-    gap: 2rem;
+    justify-content: flex-start; /* Align items to left */
+    gap: 1rem;
+    width: 100%;
+    overflow: visible; /* Ensure text isn't clipped */
   }
   
   .body-scan-img {
-    width: 50%;
+    width: 40%; /* Adjust as needed */
     height: auto;
     max-height: none;
+    margin-right: 1rem; /* Space between image and text */
   }
   
   .stacked-text {
     margin-left: 0;
-    font-size: 2.5rem;
-    text-align: center;
+    font-size: 1.8rem; /* Adjusted for mobile */
+    text-align: left;
     line-height: 1.1;
+    flex-shrink: 0; /* Prevent text from shrinking */
+    width: 55%; /* Adjust as needed */
   }
          }
       </style>
