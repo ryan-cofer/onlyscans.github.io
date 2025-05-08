@@ -106,15 +106,13 @@
          letter-spacing: -0.04em;
          }
          .section3-bg {
-         background-color: white;
-         color: black;
-         width: 100vw;
-         height: 90vh;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         padding: 0;
-         }
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  gap: 1rem;
+}
          .section3-content {
          display: flex;
          align-items: center;
@@ -258,7 +256,21 @@
     height: auto;
     max-height: none;
   }
+            .text-container {
+    width: 100%;
+    text-align: center;
+  }
+            .text-container {
+  max-width: 500px;
+  padding: 1rem;
+  box-sizing: border-box;
+  color: white;
+  font-size: 1.5rem;
+}
          }
+         html, body {
+  overflow-x: hidden;
+}
       </style>
       <script>
          function toggleMenu() {
@@ -288,17 +300,11 @@
          <img src="phoneInHand.png" alt="Phone in Hand" class="phone-image">
       </section>
       <section class="section3-bg">
-         <div class="section3-content">
-            <img src="bodyScan.png" alt="Body Scan" class="body-scan-img">
-            <div class="stacked-text">
-               <div>Generate</div>
-               <div>full-scale</div>
-               <div>AR scans</div>
-               <div>of yourself</div>
-               <div>in seconds</div>
-            </div>
-         </div>
-      </section>
+  <img class="body-scan-img" src="scan.png" alt="Body scan">
+  <div class="text-container">
+    <h2>Generate<br>full-scale<br>AR scans<br>of yourself<br>in seconds</h2>
+  </div>
+</section>
       <section class="section4-bg">
          <h2>Monetize and share your scans with fans so they can see you, walk around you, and get up close and personal.</h2>
          <div class="image-grid">
