@@ -218,12 +218,16 @@
          text-decoration: none;
          }
          .phone-image {
-  position: absolute;
-  bottom: 0px;
-  right: 150px;
-  max-height: 80%;
-  z-index: 5;
-}
+         position: absolute;
+         bottom: 0px;
+         right: 150px;
+         max-height: 80%;
+         z-index: 5;
+         }
+
+
+
+
 
 
 
@@ -245,42 +249,46 @@
          box-sizing: border-box;
          }
          .phone-image {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    max-height: 350px;
-    width: auto;
-    margin: 0;
-    padding: 0;
-  }
-            .section3-bg {
+         position: absolute;
+         right: 0;
+         bottom: 0;
+         max-height: 350px;
+         width: auto;
+         margin: 0;
+         padding: 0;
+         }
+         .section3-bg {
     height: auto;
-    padding: 2rem;
+    padding: 2rem 0; /* Remove horizontal padding */
   }
   
   .section3-content {
-    flex-direction: row; /* Keep horizontal layout */
+    flex-direction: row;
     align-items: center;
-    justify-content: flex-start; /* Align items to left */
+    justify-content: flex-start;
     gap: 1rem;
     width: 100%;
-    overflow: visible; /* Ensure text isn't clipped */
+    margin: 0; /* Remove any default margins */
+    padding: 0 1rem; /* Add slight padding only to prevent edge touching */
   }
   
   .body-scan-img {
-    width: 40%; /* Adjust as needed */
+    width: 40%;
     height: auto;
     max-height: none;
-    margin-right: 1rem; /* Space between image and text */
+    margin: 0; /* Remove all margins */
+    padding: 0; /* Remove all padding */
+    align-self: flex-start; /* Align to top */
   }
   
   .stacked-text {
-    margin-left: 0;
-    font-size: 1.8rem; /* Adjusted for mobile */
+    margin: 0;
+    padding: 0;
+    font-size: 1.8rem;
     text-align: left;
     line-height: 1.1;
-    flex-shrink: 0; /* Prevent text from shrinking */
-    width: 55%; /* Adjust as needed */
+    flex-shrink: 0;
+    width: 55%;
   }
          }
       </style>
