@@ -217,6 +217,13 @@
          color: #0077cc;
          text-decoration: none;
          }
+         .phone-image {
+  position: absolute;
+  bottom: 0px;
+  right: 150px;
+  max-height: 80%;
+  z-index: 5;
+}
 
 
 
@@ -237,11 +244,11 @@
          padding: 0 10px;
          box-sizing: border-box;
          }
-         .section2-bg img[alt="Phone in Hand"] {
+         .phone-image {
     position: absolute;
     right: 0;
     bottom: 0;
-    max-height: 200px; /* or adjust to your desired size */
+    max-height: 200px;
     width: auto;
     margin: 0;
     padding: 0;
@@ -273,7 +280,7 @@
       </section>
       <section class="section2-bg">
          <h2>Put yourself in their space</h2>
-         <img src="phoneInHand.png" alt="Phone in Hand" style="position: absolute; bottom: 0px; right: 150px; max-height: 80%; z-index: 5;">
+         <img src="phoneInHand.png" alt="Phone in Hand" class="phone-image">
       </section>
       <section class="section3-bg">
          <div class="section3-content">
