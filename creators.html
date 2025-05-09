@@ -190,9 +190,10 @@
   color: var(--text-dark);
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding-top: 5vh; /* Reduced from 20vh to 5vh */
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px; /* Fixed padding instead of vh units */
+  min-height: 90vh; /* Maintain minimum height */
 }
 
 .position-section h2 {
@@ -201,17 +202,20 @@
   margin-bottom: var(--spacing-lg);
   text-align: center;
   width: 100%;
-  margin-top: var(--spacing-md); /* Add margin-top */
+  position: relative;
+  top: 0;
+  margin-top: 0;
 }
     
     .phone-image {
   position: absolute;
   bottom: 0;
   right: 0;
-  height: 60%; /* 60% of section height on desktop */
+  height: 60%;
   width: auto;
   object-fit: contain;
   z-index: 5;
+  max-height: none; /* Remove any max-height constraints */
 }
     
     /* Scan Section */
@@ -424,13 +428,13 @@
       }
       
       .position-section {
-        padding-top: 15vh;
-      }
-      
-      .position-section h2 {
-        font-size: 1.8rem;
-        padding: 0 var(--spacing-sm);
-      }
+    padding-top: 60px; /* Smaller top padding on mobile */
+  }
+  
+  .position-section h2 {
+    font-size: 1.8rem;
+    padding: 0 var(--spacing-sm);
+  }
       
       .phone-image {
     height: 30%; /* 30% of section height on mobile */
