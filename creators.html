@@ -184,24 +184,25 @@
     
     /* Position Section */
     .position-section {
-      background-image: url('section2bg.png');
-      background-size: cover;
-      background-position: center;
-      color: var(--text-dark);
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      padding-top: 20vh;
-    }
-    
-    .position-section h2 {
-      font-size: 3rem;
-      letter-spacing: -0.04em;
-      margin-bottom: var(--spacing-lg);
-      text-align: center;
-      width: 100%;
-    }
+  background-image: url('section2bg.png');
+  background-size: cover;
+  background-position: center;
+  color: var(--text-dark);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 5vh; /* Reduced from 20vh to 5vh */
+}
+
+.position-section h2 {
+  font-size: 3rem;
+  letter-spacing: -0.04em;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+  width: 100%;
+  margin-top: var(--spacing-md); /* Add margin-top */
+}
     
     .phone-image {
       position: absolute;
@@ -538,11 +539,11 @@
     </section>
 
     <section class="position-section">
-      <div class="container position-relative">
-        <h2>Put yourself in their space</h2>
-        <img src="phoneInHand.png" alt="Phone in Hand" class="phone-image">
-      </div>
-    </section>
+  <div class="container position-relative">
+    <h2>Put yourself in their space</h2>
+    <img src="phoneInHand.png" alt="Phone in Hand" class="phone-image">
+  </div>
+</section>
 
     <section class="scan-section">
       <div class="container">
