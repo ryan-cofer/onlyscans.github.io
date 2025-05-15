@@ -1,0 +1,11 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "5AZDVSV3VD.com.bearbuiltlabs.OnlyScans",
+        "paths": [ "/scanview/*" ]
+      }
+    ]
+  }
+}
