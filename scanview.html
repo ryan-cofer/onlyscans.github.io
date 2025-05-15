@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opening OnlyScans...</title>
+  <script>
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    function getQueryParams() {
+      return new URLSearchParams(window.location.search);
+    }
+
+    window.onload = () => {
+      const fallback = "https://apps.apple.com/us/app/id6744573299";
+      const params = getQueryParams();
+      const file = params.get("file");
+      const contentType = params.get("contentType");
+
+      if (!file || !contentType) {
+        // Optional: show error or fallback if params are missing
+        window.location.href = fallback;
+        return;
+      }
+
+      const fullAppURL = `onlyscans://scan?file=${encodeURIComponent(file)}&fallback=${encodeURIComponent(fallback)}&contentType=${encodeURIComponent(contentType)}`;
+
+      if (isIOS()) {
+        window.location.href = fullAppURL;
+      } else {
+        window.location.href = fallback;
+      }
+    };
+  </script>
+</head>
+<body>
+  <p>Opening OnlyScans...</p>
+</body>
+</html>
