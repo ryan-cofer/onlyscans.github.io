@@ -1,4 +1,186 @@
 <!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="robots" content="noindex, nofollow">
+      <title>OnlyScans</title>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1J2L2RR14"></script>
+      <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         
+         gtag('config', 'G-W1J2L2RR14');
+      </script>
+      <style>
+         /* Base styles (desktop first) */
+         body {
+         background-color: black;
+         color: white;
+         font-family: 'Helvetica', sans-serif;
+         font-weight: bold;
+         letter-spacing: -0.05em;
+         text-align: center;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         }
+         h1 {
+         font-size: 72px;
+         margin: 0;
+         }
+         p {
+         font-size: 32px;
+         margin-top: -20px;
+         }
+         .p2 {
+         font-size: 18px;
+         margin-top: 10px;
+         font-weight: normal;
+         letter-spacing: 0em;
+         text-align: justify;
+         font-family: 'Helvetica', sans-serif;
+         max-width: 800px;
+         margin-left: auto;
+         margin-right: auto;
+         padding: 0 20px;
+         }
+         .p3 {
+         font-size: 32px;
+         margin-top: 50px;
+         }
+         .p4 {
+         font-size: 20px;
+         margin-top: 200px;
+         }
+         img {
+         margin-top: 10px;
+         width: 250px;
+         }
+         .icon-container {
+         display: flex;
+         justify-content: center;
+         gap: 20px;
+         }
+         /* Top-left logo */
+         .top-left {
+         position: absolute;
+         top: 10px;
+         left: 10px;
+         width: 75px;
+         height: auto;
+         }
+         /* Top-right hamburger */
+         .hamburger {
+         position: absolute;
+         top: 10px;
+         right: 10px;
+         width: 30px;
+         height: 30px;
+         cursor: pointer;
+         }
+         /* Dropdown menu */
+         .menu {
+         display: none;
+         position: absolute;
+         top: 50px;
+         right: 10px;
+         background-color: #1c1c1c;
+         border: 1px solid #444;
+         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+         z-index: 1000;
+         text-align: left;
+         }
+         .menu a {
+         display: block;
+         padding: 10px 15px;
+         text-decoration: none;
+         color: white;
+         border-bottom: 1px solid #333;
+         font-weight: normal;
+         }
+         .menu a:hover {
+         background-color: #333;
+         }
+         .responsive-logo {
+         width: 350px;
+         margin-top: 250px;
+         }
+         .responsive-button {
+         width: 150px;
+         margin-top: 300px;
+         }
+         /* Mobile styles */
+         @media (max-width: 800px) {
+         h1 {
+         font-size: 48px;
+         }
+         p {
+         font-size: 22px;
+         margin-top: -12px;
+         }
+         .p2 {
+         font-size: 16px;
+         padding: 0 0px;
+         }
+         .p3 {
+         font-size: 24px;
+         }
+         .p4 {
+         font-size: 16px;
+         }
+         img {
+         width: 150px;
+         }
+         .icon-container {
+         gap: 10px;
+         }
+         .responsive-logo {
+         width: 200px;  /* Adjust this value as needed */
+         margin-top: 200px;  /* Adjust this value as needed */
+         }
+         .responsive-button {
+         width: 150px;  /* Adjust this value as needed */
+         margin-top: 200px;  /* Adjust this value as needed */
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Top-left logo -->
+      <img class="top-left" src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true" alt="OnlyScans Logo">
+      <!-- Top-right hamburger menu -->
+      <img class="hamburger" src="https://img.icons8.com/ios-filled/50/ffffff/menu--v1.png" alt="Menu" onclick="toggleMenu()">
+      <!-- Dropdown menu -->
+      <div class="menu" id="menu">
+         <a href="index.html">Home</a>
+         <a href="privacy.html">Privacy Policy</a>
+         <a href="terms.html">Terms of Service</a>
+         <a href="mailto:onlyscansapp@gmail.com">Contact</a>
+      </div>
+      <!-- Center image -->
+      <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/siteLogo.png?raw=true"
+         alt="OnlyScans Logo"
+         class="responsive-logo">
+      <a href="https://apps.apple.com/us/app/onlyscans-ar-for-everyone/id6744573299" target="_blank" rel="noopener noreferrer">
+      <img src="https://github.com/ryan-cofer/onlyscans.github.io/blob/main/downloadButton.svg?raw=true"
+         alt="Download Button"
+         class="responsive-button">
+      </a>
+      <p class="p4">onlyscansapp@gmail.com</p>
+      <script>
+         function toggleMenu() {
+             const menu = document.getElementById('menu');
+             menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+         }
+      </script>
+   </body>
+</html>
+
 <!--
 <html lang="en">
 <head>
